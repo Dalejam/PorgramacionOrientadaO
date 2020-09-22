@@ -21,12 +21,12 @@ public class AppMercado {
         Producto ron = new Producto(42,"Ron de Caldas",1,53000,LICOR);
 
         mercadoA.getProductos().addAll(Arrays.asList(pAbuela,solomo,pera,brocoli));
-        System.out.println("Se agrego al mercado "+ mercadoA.agregar(colanta));
-        System.out.println("Se retiro de la compra " + mercadoA.retirar(colanta.getNombre()));
-        System.out.println("Se busco el producto por codigo " +pAbuela.getNombre() +"---"+ mercadoA.buscar(80));
-        System.out.println("Se busca el producto por nombre " + pera.getNombre() +"---"+ mercadoA.buscar("pera"));
-        //System.out.println("Se busca por Tipo "+ mercadoA.buscarPorTipo(PAN));
-        System.out.println("El total es:"+mercadoA.calcularTotal());
+        mercadoA.agregar(colanta);
+        mercadoA.retirar(colanta.getNombre());
+        mercadoA.buscar("pera");
+        mercadoA.buscar(80);
+        mercadoA.buscarPorTipo("FRUTA");
+        System.out.println("El total es:"+ mercadoA.calcularTotal());
 
 
 

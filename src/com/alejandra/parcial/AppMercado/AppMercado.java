@@ -26,6 +26,7 @@ public class AppMercado {
         mercadoA.buscar("Pera");
         mercadoA.buscar(42);
         mercadoA.buscarPorTipo("FRUTA");
+        System.out.println("Lista Productos");
         mercadoA.getProductos().forEach(imprimir->{
             System.out.println(imprimir.getNombre()+ " "+ imprimir.getPrecio());
         });

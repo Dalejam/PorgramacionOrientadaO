@@ -35,16 +35,14 @@ public class Mercado {
                 {
                     productos.add(p);
                     agrega=true;
+                    break;
                 }
             }
         }
-        else
-        {
-             agrega=false;
-        }
+
         if(agrega==true)
         {
-            System.out.println("Se agrego a canasta el producto");
+            System.out.println("Se agrego a canasta el producto " + p.getNombre());
         }
         else
         {
@@ -59,13 +57,11 @@ public class Mercado {
             if (productos.get(i).getNombre() == nombre) {
                 productos.remove(i);
                 retiro=true;
-            } else {
-                retiro= false;
             }
         }
         if(retiro==true)
         {
-            System.out.println("Se elimino producto");
+            System.out.println("Se elimino producto " + nombre);
         }
         else
         {
@@ -82,13 +78,10 @@ public class Mercado {
             {
                 producto= productos.get(i);
             }
-            else
-            {
-                producto=null;
-            }
+
 
         }
-        System.out.println("la lista de producto con el nombre es  : "+producto );
+        System.out.println("la lista de producto con el nombre es  : "+producto.getNombre() );
         return producto;
     }
     public Producto buscar (int codigo)
@@ -100,12 +93,17 @@ public class Mercado {
             {
                 producto =productos.get(i);
             }
-            else
-            {
-                producto= null;
-            }
+
         }
-        System.out.println("la lista de producto con el codigo es : "+ producto);
+        if(producto!=null)
+        {
+            System.out.println("la lista de producto con el codigo es : "+ producto.getNombre());
+        }
+        else
+        {
+            System.out.println("la lista es NULL, no se encontro producto");
+        }
+
         return producto;
     }
     public ArrayList<Producto> buscarPorTipo (String tipo)
@@ -116,6 +114,7 @@ public class Mercado {
             if(productos.get(i).getTipo()==tipo)
             {
                 productoTipo.add(productos.get(i));
+                System.out.println("el producto"+productoTipo.get(i).getNombre());
             }
         }
         if(productoTipo!=null)

@@ -20,14 +20,13 @@ public class AppMercado {
         Producto detodito = new Producto(61,"DeTodito de Limon",1,5,CONFITERIA);
         Producto ron = new Producto(42,"Ron de Caldas",1,53000,LICOR);
 
-        mercadoA.getProductos().addAll(Arrays.asList(pAbuela,solomo,pera,brocoli));
+        mercadoA.getProductos().addAll(Arrays.asList(colanta,pAbuela,solomo,pera,brocoli,jabon,detodito));
         mercadoA.agregar(colanta);
         mercadoA.retirar(colanta.getNombre());
-        mercadoA.buscar("pera");
-        mercadoA.buscar(80);
+        mercadoA.buscar(pera.getNombre());
+        mercadoA.buscar(pAbuela.getCodigo());
         mercadoA.buscarPorTipo("FRUTA");
         System.out.println("El total es:"+ mercadoA.calcularTotal());
-
 
 
     }

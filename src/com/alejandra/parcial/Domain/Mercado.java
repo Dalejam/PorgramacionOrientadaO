@@ -42,6 +42,14 @@ public class Mercado {
         {
              agrega=false;
         }
+        if(agrega==true)
+        {
+            System.out.println("Se agrego a canasta el producto");
+        }
+        else
+        {
+            System.out.println("producto ya existe no se puede agregar");
+        }
         return agrega;
     }
     public boolean retirar(String nombre)
@@ -54,6 +62,14 @@ public class Mercado {
             } else {
                 retiro= false;
             }
+        }
+        if(retiro==true)
+        {
+            System.out.println("Se elimino producto");
+        }
+        else
+        {
+            System.out.println("producto no se encuentra en lista");
         }
         return retiro;
     }
@@ -72,6 +88,7 @@ public class Mercado {
             }
 
         }
+        System.out.println("la lista de producto con el nombre es  : "+producto );
         return producto;
     }
     public Producto buscar (int codigo)
@@ -88,6 +105,7 @@ public class Mercado {
                 producto= null;
             }
         }
+        System.out.println("la lista de producto con el codigo es : "+ producto);
         return producto;
     }
     public ArrayList<Producto> buscarPorTipo (String tipo)
@@ -100,6 +118,14 @@ public class Mercado {
                 productoTipo.add(productos.get(i));
             }
         }
+        if(productoTipo!=null)
+        {
+            System.out.println("la lista de productos con el mismo tipo");
+            productoTipo.forEach(lista->{
+                System.out.println(lista);
+            });
+        }
+
         return productoTipo;
     }
     public int calcularTotal()
